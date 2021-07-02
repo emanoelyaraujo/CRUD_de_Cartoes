@@ -29,27 +29,27 @@
                 <div class="col mb-2">
                     <label for="first_name" class="form-label">Nome</label>
                     <input type="text" name="first_name" class="form-control" value="<?= $usuario->first_name ?>" id="first_name" autofocus required>
-                    <div class="form-text text-danger"><?= $this->session->flashdata('first_name'); ?></div>
+                    <?= textCustom("first_name") ?>
                 </div>
                 <div class="col-12 mb-2">
                     <label for="last_name" class="form-label">Sobrenome</label>
                     <input type="text" name="last_name" class="form-control" value="<?= $usuario->last_name ?>" id="last_name" required>
-                    <div class="form-text text-danger"><?= $this->session->flashdata('last_name'); ?></div>
+                    <?= textCustom("last_name") ?>
                 </div>
                 <div class="col-12 mb-2">
                     <label for="email" class="form-label">E-mail</label>
                     <input type="email" name="email" class="form-control" value="<?= $usuario->email ?>" id="email" required>
-                    <div class="form-text text-danger"><?= $this->session->flashdata('email'); ?></div>
+                    <?= textCustom("email") ?>
                 </div>
                 <div class="col-12 mb-2">
                     <label for="password" class="form-label">Senha</label>
                     <input type="password" name="password" class="form-control" value="" id="password">
-                    <div class="form-text text-danger"><?= $this->session->flashdata('password'); ?></div>
+                    <?= textCustom("password") ?>
                 </div>
                 <div class="col-12 mb-2">
                     <label for="confirm_password" class="form-label">Confirmação da Senha</label>
                     <input type="password" name="confirm_password" class="form-control" value="" id="confirm_password">
-                    <div class="form-text text-danger"><?= $this->session->flashdata('confirm_password'); ?></div>
+                    <?= textCustom("confirm_password") ?>
                 </div>
                 <a href="<?= base_url("Home") ?>" class="btn btn-outline-secondary mt-4">Voltar</a>
                 <button type="submit" class="btn btn-warning mt-4">Editar</button>

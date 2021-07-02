@@ -74,10 +74,9 @@ class Home extends CI_Controller
                 $this->session->set_flashdata("sucesso", "Cartão cadastrado com sucesso!");
                 redirect("Home");
             }
+        }
 
-        } 
-        
-        $this->session->set_flashdata("error", "<p class='text-danger'>Falha ao cadastrar cartão.</p>");
+        $this->session->set_flashdata("error", "Falha ao cadastrar cartão.");
 
         redirect("Home/inserir");
     }
@@ -90,19 +89,20 @@ class Home extends CI_Controller
         $recebeCartao["date"] = date("Ymd", strtotime($recebeCartao["date"]));
         $recebeCartao["idUser"] = $this->session->userdata("id");
 
-        $linhasAfetadas = $this->Home_model->updateCards($recebeCartao, $id);
-
-        if ($linhasAfetadas > 0)
+        if (is_null($this->Home_model->getCardNumber($recebeCartao["number"])))
         {
-            $this->session->set_flashdata("sucesso", "Cartão atualizado com sucesso!");
-        }
-        else
-        {
-            $this->session->set_flashdata("error", "Falha ao atulizar cartão.");
-            redirect("Home/alterar/$id");
+            $linhasAfetadas = $this->Home_model->updateCards($recebeCartao, $id);
+
+            if ($linhasAfetadas > 0)
+            {
+                $this->session->set_flashdata("sucesso", "Cartão atualizado com sucesso!");
+                redirect("Home");
+            }
         }
 
-        redirect("Home");
+        $this->session->set_flashdata("error", "Falha ao atulizar cartão.");
+        redirect("Home/alterar/$id");
+
     }
 
     public function deletaCartao($id)

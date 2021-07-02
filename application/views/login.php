@@ -25,7 +25,8 @@
         <form method="post" action="<?= base_url("login/validaLogin") ?>" class="row justify-content-center align-items-center h-100">
             <div class="col-md-4" id="formulario">
                 <h3>Login</h3>
-                <?= $this->session->flashdata("error") ?>
+                <?= textCustom("error") ?>
+                <?= textCustom("sucesso") ?>
                 <div class="mb-3">
                     <label for="email" class="form-label">E-mail</label>
                     <input type="email" name="email" class="form-control" id="email" required>

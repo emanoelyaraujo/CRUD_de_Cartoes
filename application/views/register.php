@@ -25,26 +25,26 @@
         <form method="post" action="<?= base_url("register/insereUsuario") ?>" class="row justify-content-center align-items-center h-100">
             <div class="col-md-4" id="formulario">
                 <h3>Cadastre-se</h3>
-                <?= $this->session->flashdata("error") ?>
+                <?= textCustom("error") ?>
                 <div class="mb-3">
                     <label for="first_name" class="form-label">Nome</label>
                     <input type="text" name="first_name" class="form-control" id="first_name" maxlength="50" autofocus required>
-                    <?= $this->session->flashdata("first_name") ?>
+                    <?= textCustom("first_name") ?>
                 </div>
                 <div class="mb-3">
                     <label for="last_name" class="form-label">Sobrenome</label>
                     <input type="text" name="last_name" class="form-control" id="last_name" maxlength="50" required>
-                    <?= $this->session->flashdata("last_name") ?>
+                    <?= textCustom("last_name") ?>
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">E-mail</label>
                     <input type="email" name="email" class="form-control" maxlength="50" id="email" required>
-                    <?= $this->session->flashdata("email") ?>
+                    <?= textCustom("email") ?>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Senha</label>
                     <input type="password" name="password" class="form-control" minlength="6" maxlength="15" id="password" required>
-                    <?= $this->session->flashdata("password") ?>
+                    <?= textCustom("password") ?>
                 </div>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
                 <a href="<?= base_url("Login") ?>" class="">Voltar</a>

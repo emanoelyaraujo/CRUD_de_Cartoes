@@ -26,20 +26,24 @@
         <form method="post" action="<?= base_url("Home/$acao/" . (isset($cartao) ? $cartao->id : "")) ?>" class="row justify-content-center align-items-center h-100">
             <div class="col-md-4" id="formulario">
                 <h3><?= $titulo ?></h3>
-                <?= $this->session->flashdata("error") ?>
+                <?= textCustom("error") ?>
+                <?= textCustom("sucesso") ?>
                 <div class="col-12">
                     <label for="number" class="form-label">Número</label>
                     <input type="text" name="number" class="form-control" value="<?= (isset($cartao) ? $cartao->number : "") ?>" id="number" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" required>
+                    <?= textCustom("number") ?>
                 </div>
                 <div class="row">
                     <div class="col-6">
                         <label for="date" class="form-label">Validade</label>
                         <input type="date" class="form-control" value="<?= (isset($cartao) ? $cartao->date : "") ?>" id="date" name="date" min="<?= date("Y-m-d") ?>" required>
                         <span class="validity"></span>
+                        <?= textCustom("date") ?>
                     </div>
                     <div class="col">
                         <label for="cvv" class="form-label">Código de Verificação</label>
                         <input type="text" name="cvv" maxlength="3" class="form-control" value="<?= (isset($cartao) ? $cartao->cvv : "") ?>" id="cvv" required>
+                        <?= textCustom("cvv") ?>
                     </div>
                 </div>
 
