@@ -64,19 +64,22 @@ class Home extends CI_Controller
         $recebeCartao["date"] = date("Ymd", strtotime($recebeCartao["date"]));
         $recebeCartao["idUser"] = $this->session->userdata("id");
 
-        $idInserido = $this->Home_model->create($recebeCartao);
 
-        if ($idInserido > 0)
+        if (is_null($this->Home_model->getCardNumber($recebeCartao["number"])))
         {
-            $this->session->set_flashdata("sucesso", "Cartão cadastrado com sucesso!");
-        }
-        else
-        {
-            $this->session->set_flashdata("error", "Falha ao cadastrar cartão.");
-            redirect("Home/chamaView");
-        }
+            $idInserido = $this->Home_model->create($recebeCartao);
 
-        redirect("Home");
+            if ($idInserido > 0)
+            {
+                $this->session->set_flashdata("sucesso", "Cartão cadastrado com sucesso!");
+                redirect("Home");
+            }
+
+        } 
+        
+        $this->session->set_flashdata("error", "<p class='text-danger'>Falha ao cadastrar cartão.</p>");
+
+        redirect("Home/inserir");
     }
 
     public function atualizaCartao($id)
@@ -96,7 +99,7 @@ class Home extends CI_Controller
         else
         {
             $this->session->set_flashdata("error", "Falha ao atulizar cartão.");
-            redirect("Home/chamaView/$id");
+            redirect("Home/alterar/$id");
         }
 
         redirect("Home");
@@ -113,7 +116,7 @@ class Home extends CI_Controller
         else
         {
             $this->session->set_flashdata("error", "Falha ao excluír cartão.");
-            redirect("Home/chamaView/$id");
+            redirect("Home/deletar/$id");
         }
 
         redirect("Home");

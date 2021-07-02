@@ -26,6 +26,7 @@
         <form method="post" action="<?= base_url("Home/$acao/" . (isset($cartao) ? $cartao->id : "")) ?>" class="row justify-content-center align-items-center h-100">
             <div class="col-md-4" id="formulario">
                 <h3><?= $titulo ?></h3>
+                <?= $this->session->flashdata("error") ?>
                 <div class="col-12">
                     <label for="number" class="form-label">Número</label>
                     <input type="text" name="number" class="form-control" value="<?= (isset($cartao) ? $cartao->number : "") ?>" id="number" pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" required>

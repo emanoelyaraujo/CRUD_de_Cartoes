@@ -48,4 +48,10 @@ class Home_model extends CI_Model
 
         return $this->db->affected_rows();
     }
+
+    public function getCardNumber($number){
+        $this->db->select()->from("cards")->where("number", $number);
+
+        return $this->db->get()->row();
+    }
 }
