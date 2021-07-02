@@ -98,7 +98,7 @@ class Navbar extends CI_Controller
 
         $linhasAfetadas = $this->Navbar_model->deleteUser($id);
 
-        if($linhasAfetadas > 0){
+        if($linhasAfetadas){
             redirect("Login/logout");
         } else {
             $this->session->set_flashdata("error", "Falha ao encerrar a sessão.");

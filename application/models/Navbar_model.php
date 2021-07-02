@@ -31,9 +31,13 @@ class Navbar_model extends CI_Model{
     }
 
     public function deleteUser($id)
-    {
+    {   
+        $this->db->trans_start();
+        $this->db->where("idUser", $id)->delete("cards");
         $this->db->where("id", $id)->delete($this->tabela);
+        $this->db->trans_complete();
 
-        return $this->db->affected_rows();
+        return $this->db->trans_status();
+
     }
 }
