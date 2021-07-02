@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- CDN FONT -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <title>Home</title>
 </head>
 
@@ -31,13 +33,13 @@
         </nav>
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
-                <a href="<?= base_url("Navbar") ?>" id="edit">Editar dados do usuário</a>
+                <a href="<?= base_url("Navbar") ?>" id="edit"><i class="fas fa-user-edit"></i>Editar dados do usuário</a>
             </div>
             <div class="bg-dark px-4 pb-4">
-                <a href="<?= base_url("Navbar/chamaView") ?>" id="edit">Encerrar sessão</a>
+                <a href="<?= base_url("Navbar/chamaView") ?>" id="edit"><i class="fas fa-user-times"></i>Encerrar sessão</a>
             </div>
             <div class="bg-dark px-4 pb-4">
-                <a href="<?= base_url("Login/logout") ?>" id="edit">Sair</a>
+                <a href="<?= base_url("Login/logout") ?>" id="edit"><i class="fas fa-sign-out-alt"></i>Sair</a>
             </div>
         </div>
 
@@ -65,7 +67,7 @@
 
         <h3>Tabela de Cartões de Crédito</h3>
         <div>
-            <a href="<?= base_url("Home/inserir") ?>" class="btn btn-primary btn-sm">Novo Cartão</a>
+            <a href="<?= base_url("Home/inserir") ?>" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Novo Cartão</a>
         </div>
         <table class="table table-striped table-hover mt-3">
             <thead>
@@ -88,8 +90,8 @@
                         <td><?= wordwrap($values->number, 4, " ", true) ?></td>
                         <td><?= date("d/m/Y", strtotime($values->date)) ?></td>
                         <td>
-                            <a href="<?= base_url("Home/alterar/$values->id") ?>" class="btn btn-warning btn-sm">Editar</a>
-                            <a href="<?= base_url("Home/deletar/$values->id") ?>" class="btn btn-danger btn-sm">Excluir</a>
+                            <a href="<?= base_url("Home/alterar/$values->id") ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>Editar</a>
+                            <a href="<?= base_url("Home/deletar/$values->id") ?>" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i>Excluir</a>
                         </td>
                     </tr>
                 <?php
