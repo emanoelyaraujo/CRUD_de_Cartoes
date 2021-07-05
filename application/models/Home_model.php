@@ -4,20 +4,31 @@ defined("BASEPATH") or exit("Ação não permitida.");
 
 class Home_model extends CI_Model
 {
-
+    
+    /**
+     * nome tabela
+     *
+     * @var string
+     */
     private $tabela = "cards";
 
     public function __construct()
     {
         parent::__construct();
     }
-
+    
+    /**
+     * getCard
+     *
+     * @param mixed $id
+     * @return object|null
+     */
     public function getCard($id){
         $this->db->select()->from($this->tabela)->where("id", $id);
 
         return $this->db->get()->row();
     }
-
+    
     public function create($usuario)
     {
 
