@@ -19,6 +19,10 @@
         background-color: #ECF0F1;
         padding: 2% 2% 2% 2%;
     }
+
+    /* .form-control:required {
+        border-color: aqua;
+    } */
 </style>
 
 <body>

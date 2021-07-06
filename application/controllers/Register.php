@@ -9,10 +9,6 @@ class Register extends CI_Controller
     {
         parent::__construct();
 
-        if(!$this->session->userdata("logged")){
-            redirect("Login");
-        }
-
         $this->load->library("form_validation");
         $this->load->model("Register_model");
     }

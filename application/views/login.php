@@ -37,7 +37,7 @@
                 </div>
                 <button type="submit" class="w-100 btn btn-primary">Entrar</button>
                 <div class="text-center mt-3">
-                    <a href="<?= base_url("Register") ?>" class="">Cadastre-se</a>
+                    <a href="<?= base_url("Register") ?>">Cadastre-se</a>
                 </div>
             </div>
         </form>

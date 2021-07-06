@@ -10,6 +10,7 @@
         }
 
         public function get_user($post){
+            
             $this->db->select()->from("users")->where("email", $post["email"]);
 
             return $this->db->get()->row();

@@ -49,7 +49,7 @@ class Login extends CI_Controller
             }
             else
             {
-                $this->session->set_flashdata("error", "<div class='text-danger'>Usuário informado não está cadastrado.</div>");
+                $this->session->set_flashdata("error", "Usuário informado não está cadastrado.");
                 redirect("Register");
                 
             }
