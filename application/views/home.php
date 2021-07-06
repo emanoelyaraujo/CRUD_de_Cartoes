@@ -65,7 +65,7 @@
         }
         ?>
 
-        <h3>Tabela de Cartões de Crédito</h3>
+        <h3 class="mt-3">Tabela de Cartões de Crédito</h3>
         <div>
             <a href="<?= base_url("Home/inserir") ?>" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Novo Cartão</a>
         </div>
@@ -92,6 +92,7 @@
                         <td>
                             <a href="<?= base_url("Home/alterar/$values->id") ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>Editar</a>
                             <a href="<?= base_url("Home/deletar/$values->id") ?>" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i>Excluir</a>
+                            <a href="" class="btn btn-success btn-sm"><i class="fas fa-eye"></i>Visualizar</a>
                         </td>
                     </tr>
                 <?php
