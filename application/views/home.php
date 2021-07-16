@@ -67,7 +67,7 @@
 
         <h3 class="mt-3">Tabela de Cartões de Crédito</h3>
         <div>
-            <a href="<?= base_url("Home/inserir") ?>" class="btn btn-primary"><i class="fas fa-plus"></i>Novo Cartão</a>
+            <a href="<?= base_url("Home/inserir") ?>" class="btn btn-primary btn-sm"><i class="fas fa-plus"></i>Novo Cartão</a>
         </div>
         <table class="table table-striped table-hover mt-3">
             <thead>
@@ -90,9 +90,9 @@
                         <td><?= wordwrap($values->number, 4, " ", true) ?></td>
                         <td><?= date("d/m/Y", strtotime($values->date)) ?></td>
                         <td>
-                        <a href="<?= base_url("Home/visualizar/$values->id") ?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                            <a href="<?= base_url("Home/alterar/$values->id") ?>" class="btn btn-warning"><i class="fas fa-edit"></i></a>
-                            <a href="<?= base_url("Home/deletar/$values->id") ?>" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                            <a href="<?= base_url("Home/alterar/$values->id") ?>" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i>Editar</a>
+                            <a href="<?= base_url("Home/deletar/$values->id") ?>" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i>Excluir</a>
+                            <a href="" class="btn btn-success btn-sm"><i class="fas fa-eye"></i>Visualizar</a>
                         </td>
                     </tr>
                 <?php
