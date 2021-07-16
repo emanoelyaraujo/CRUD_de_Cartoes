@@ -56,3 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 $route['Home/inserir'] = 'Home/chamaView/$1';
 $route['Home/alterar/(:num)'] = 'Home/chamaView/$1';
 $route['Home/deletar/(:num)'] = 'Home/chamaView/$1';
+$route['Home/visualizar/(:num)'] = 'Home/chamaView/$1';
