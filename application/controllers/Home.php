@@ -53,6 +53,10 @@ class Home extends CI_Controller
                 $data["cor"] = "danger";
                 $data["botao"] = "Excluir";
                 break;
+            case "visualizar":
+                $data["acao"] = "visualizaCartao";
+                $data["titulo"] = "Visualizar Cartão";
+                break;
         }
 
         if (!is_null($id))
@@ -127,5 +131,10 @@ class Home extends CI_Controller
         }
 
         redirect("Home");
+    }
+
+    public function visualizar($id){
+        
+        $this->chamaView();
     }
 }
