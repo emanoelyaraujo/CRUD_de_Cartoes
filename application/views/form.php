@@ -51,7 +51,13 @@
                     </div>
                 </div>
                 <a href="<?= base_url("Home") ?>" class="btn btn-outline-secondary mt-4">Voltar</a>
-                <button type="submit" class="btn btn-<?= $cor ?> mt-4"><?= $botao ?></button>
+                <?php
+                    if(isset($botao)){
+                        ?>
+                            <button type="submit" class="btn btn-<?= $cor ?> mt-4"><?= $botao ?></button>
+                        <?php
+                    }
+                ?>
             </div>
         </form>
     </div>
